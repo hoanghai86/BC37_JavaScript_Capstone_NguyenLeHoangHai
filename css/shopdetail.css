@@ -1,0 +1,18 @@
+.btn-plus,
+.btn-minus {
+  outline: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(37, 26, 26, 0.09);
+  height: 2rem;
+  width: 2rem;
+}
+
+input .quantity {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(37, 26, 26, 0.09);
+}
