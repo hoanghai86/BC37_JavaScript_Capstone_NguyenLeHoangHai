@@ -130,6 +130,8 @@ const createProductList = () => {
     .catch(function (error) {
       console.log(error);
     });
+    
+    onLoadCartNumbers();
 };
 
 //lấy thông tin của sản phẩm cần sửa lên form modal
