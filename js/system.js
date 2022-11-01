@@ -207,6 +207,7 @@ const deleteProductList = async (id) => {
       method: "DELETE",
     });
     fetchProductList();
+    onLoadCartNumbers();
   } catch (error) {
     console.log(error);
   }
@@ -298,7 +299,7 @@ const resetInputFormModal = () => {
   document.getElementById("tbId").innerHTML = "";
   document.getElementById("tbName").innerHTML = "";
   document.getElementById("tbPrice").innerHTML = "";
-  document.getElementById("tbScreen").vinnerHTML = "";
+  document.getElementById("tbScreen").innerHTML = "";
   document.getElementById("tbBackCamera").innerHTML = "";
   document.getElementById("tbFrontCamera").innerHTML = "";
   document.getElementById("tbImg").innerHTML = "";
