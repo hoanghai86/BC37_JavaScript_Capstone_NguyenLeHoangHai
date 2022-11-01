@@ -124,7 +124,7 @@ const buyNow = (id) => {
     alert("Vui lòng chọn số lượng lớn hơn 0 !!!");
     return;
   }
-
+  
   if ((cartItems = cart.find((cartItems) => cartItems.id === id))) {
     //nếu trong giỏ hàng đã có thì cộng dồn số lượng
     oldUnit = cartItems.numberOfUnit;
@@ -138,7 +138,6 @@ const buyNow = (id) => {
     cart.push({ ...cartItems, numberOfUnit: unit });
     setProductCart();
   }
-  window.location = "cart.html";
   onLoadCartNumbers(); //render lại tổng mặt hàng
 };
 
