@@ -89,6 +89,7 @@ const renderProductList = (data) => {
     `;
   }
   document.getElementById("tbodyCart").innerHTML = tableHTML;
+  onLoadCartNumbers();
 };
 
 //tạo sản phẩm mới trong danh mục
@@ -130,8 +131,6 @@ const createProductList = () => {
     .catch(function (error) {
       console.log(error);
     });
-    
-    onLoadCartNumbers();
 };
 
 //lấy thông tin của sản phẩm cần sửa lên form modal
