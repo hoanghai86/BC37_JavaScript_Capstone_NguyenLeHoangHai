@@ -120,6 +120,11 @@ const buyNow = (id) => {
   let oldUnit = 0;
   let cartItems = "";
 
+  if (unit < 1) {
+    alert("Vui lòng chọn số lượng lớn hơn 0 !!!");
+    return;
+  }
+
   if ((cartItems = cart.find((cartItems) => cartItems.id === id))) {
     //nếu trong giỏ hàng đã có thì cộng dồn số lượng
     oldUnit = cartItems.numberOfUnit;
@@ -133,6 +138,7 @@ const buyNow = (id) => {
     cart.push({ ...cartItems, numberOfUnit: unit });
     setProductCart();
   }
+  window.location = "cart.html";
   onLoadCartNumbers(); //render lại tổng mặt hàng
 };
 
@@ -151,7 +157,6 @@ const onLoadCartNumbers = () => {
   cart.forEach((item) => (total += item.numberOfUnit));
   document.getElementById("totalNumberInCart").textContent = total;
 };
-
 
 //code form login admin
 const validateLoginAdmin = () => {

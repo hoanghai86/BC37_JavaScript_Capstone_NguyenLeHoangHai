@@ -158,6 +158,9 @@ const getDataToFormModal = async (id) => {
 };
 
 const updateProductList = () => {
+  let isFormValid = validateForm();
+  if (!isFormValid) return;
+
   let id = document.getElementById("id").value;
   let name = document.getElementById("name").value;
   let price = document.getElementById("price").value;
@@ -192,6 +195,8 @@ const updateProductList = () => {
     .catch(function (error) {
       console.log(error);
     });
+
+  document.getElementById("btnClose").click();
 };
 
 //xóa một sản phẩm trong danh mục
@@ -223,7 +228,6 @@ const validateForm = () => {
   isValid &= checkRequire(id, "tbId");
   isValid &=
     checkRequire(name, "tbName") &&
-    checkDouble(name, "tbName") &&
     checkLength(name, "tbName", 1, 50);
   isValid &= checkRequire(price, "tbPrice");
   isValid &=
@@ -235,7 +239,7 @@ const validateForm = () => {
     checkRequire(frontCamera, "tbFrontCamera") &&
     checkLength(frontCamera, "tbFrontCamera", 1, 50);
   isValid &= checkRequire(img, "tbImg");
-  isValid &= checkRequire(desc, "tbDesc") && checkLength(desc, "tbDesc", 1, 50);
+  isValid &= checkRequire(desc, "tbDesc") && checkLength(desc, "tbDesc", 1, 256);
   isValid &= checkRequire(type, "tbType");
 
   return isValid;
@@ -251,7 +255,7 @@ const checkRequire = (val, spanId) => {
   return true;
 };
 
-//không được trùng tên sản phẩm
+//không được thêm trùng tên sản phẩm
 const checkDouble = (val, spanId) => {
   for (let item of productList) {
     if (item.name === val) {

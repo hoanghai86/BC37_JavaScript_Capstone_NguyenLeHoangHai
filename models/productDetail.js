@@ -55,7 +55,7 @@ class ProductDetail extends Product{
             <button class="col-2 btn-minus" type="button" onclick="changeNumberOfUnits('minus',${this.id})">-</button>
             <input
               class="col-3 text-center quantity"
-              type="text"
+              type="number"
               role="spinbutton"
               aria-valuenow="1"
               value="1"
@@ -67,7 +67,7 @@ class ProductDetail extends Product{
 
             <p class="text-center row mt-2">
             <a class="btn btn-warning col me-1" type="button" onclick="addToCart('${this.id}')"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-            <a class="btn btn-danger col ms-1" role="button" href="./cart.html" onclick="buyNow('${this.id}')">Mua ngay</a>
+            <a class="btn btn-danger col ms-1" role="button" onclick="buyNow('${this.id}')">Mua ngay</a>
             </p>
           </form>
         </div>
